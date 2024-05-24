@@ -1,6 +1,6 @@
 import { Usuario } from './usuario.entity.js';
 const usuarios = [
-    new Usuario(30199820, 'Laureano Fernández', 'laureanofernandez98@gmail.com', 'CSFTMRJO##', 5493415802992, 'cliente'),
+    new Usuario('42950000', 'Laureano', 'mail@gmail.com', 'contraseña', '2478515858', 'cliente')
 ];
 export class UsuarioRepository {
     findAll() {

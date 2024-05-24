@@ -9,7 +9,7 @@ function sanitizeUsuarioInput(req: Request, res: Response, next: NextFunction) {
     dni: req.body.dni,
     nombre: req.body.nombre,
     mail: req.body.mail,
-    contraseña: req.body.contraseña,
+    password: req.body.password,
     telefono: req.body.telefono,
     tipo: req.body.tipo,
   }
@@ -42,7 +42,7 @@ function add(req: Request, res: Response) {
     input.dni,
     input.nombre,
     input.mail,
-    input.contraseña,
+    input.password,
     input.telefono,
     input.tipo,
   )
