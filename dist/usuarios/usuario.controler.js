@@ -6,9 +6,8 @@ function sanitizeUsuarioInput(req, res, next) {
         dni: req.body.dni,
         nombre: req.body.nombre,
         mail: req.body.mail,
-        password: req.body.password,
+        contraseña: req.body.contraseña,
         telefono: req.body.telefono,
-        tipo: req.body.tipo,
     };
     Object.keys(req.body.sanitizedInput).forEach((key) => {
         if (req.body.sanitizedInput[key] === undefined) {
@@ -30,7 +29,7 @@ function findOne(req, res) {
 }
 function add(req, res) {
     const input = req.body.sanitizedInput;
-    const usuarioInput = new Usuario(input.dni, input.nombre, input.mail, input.password, input.telefono, input.tipo);
+    const usuarioInput = new Usuario(input.dni, input.nombre, input.mail, input.contraseña, input.telefono);
     const usuario = repository.add(usuarioInput);
     return res.status(201).send({ message: 'Usuario creado', data: usuario });
 }

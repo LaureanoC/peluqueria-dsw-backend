@@ -1,15 +1,29 @@
-import crypto from 'node:crypto'
+import {
+  Entity,
+  Property,
+  ManyToMany,
+  Cascade,
+  ManyToOne,
+  Rel,
+  Collection,
+} from '@mikro-orm/core'
+import { BaseEntity } from '../shared/db/baseEntity.entity.js'
 
-export class Usuario {
-  constructor(
-   
-    public dni: string,
-    public nombre: string,
-    public mail: string,
-    public password: string,
-    public telefono: string,
-    public tipo: string,
-    public id = crypto.randomUUID(),
-    
-  ) {}
+@Entity()
+export class Usuario extends BaseEntity {
+  @Property({ nullable: false })
+  dni!: number
+
+  @Property({ nullable: false })
+  nombre!: string
+
+  @Property({ nullable: false })
+  mail!: string
+
+  @Property({ nullable: false })
+  contraseña!: string
+
+  @Property({ nullable: false })
+  telefono!: number
+
 }
